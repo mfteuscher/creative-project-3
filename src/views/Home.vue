@@ -1,18 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <StateList :states="states" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import StateList from "@/components/StateList.vue";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    StateList
+  },
+  computed: {
+    states() {
+      return this.$root.$data.states;
+    }
   }
-}
+};
+
 </script>
